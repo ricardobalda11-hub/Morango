@@ -1,15 +1,180 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Morango | Productos para el Hogar</title>
-
-<link rel="stylesheet" href="css/style.css">
+<title>Morango - Productos para el Hogar</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#f5f5f5;
+color:#222;
+}
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:white;
+padding:20px 50px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+z-index:1000;
+}
+
+.logo{
+font-size:32px;
+font-weight:700;
+letter-spacing:2px;
+}
+
+nav a{
+text-decoration:none;
+color:#444;
+margin-left:25px;
+font-weight:500;
+}
+
+.hero{
+height:100vh;
+background:url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1600') center center/cover;
+display:flex;
+align-items:center;
+padding:0 8%;
+}
+
+.hero-content{
+max-width:600px;
+background:rgba(0,0,0,.35);
+padding:40px;
+border-radius:12px;
+}
+
+.hero h1{
+font-size:4rem;
+color:white;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.2rem;
+color:white;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+background:white;
+color:black;
+padding:15px 30px;
+text-decoration:none;
+border-radius:8px;
+font-weight:600;
+}
+
+section{
+padding:100px 8%;
+}
+
+h2{
+font-size:2.2rem;
+margin-bottom:40px;
+}
+
+.grid-categorias{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+}
+
+.categoria{
+background:white;
+border-radius:15px;
+overflow:hidden;
+text-decoration:none;
+color:black;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.categoria:hover{
+transform:translateY(-8px);
+}
+
+.categoria img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+.categoria-texto{
+padding:20px;
+}
+
+.categoria-texto h3{
+margin-bottom:10px;
+}
+
+.productos{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.producto{
+background:white;
+padding:15px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.producto img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:10px;
+}
+
+.producto h3{
+margin-top:15px;
+margin-bottom:10px;
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:60px;
+}
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+gap:15px;
+}
+
+.hero h1{
+font-size:2.5rem;
+}
+
+}
+
+</style>
 
 </head>
 
@@ -18,20 +183,20 @@
 <header>
 
 <div class="logo">
-    MORANGO
+MORANGO
 </div>
 
 <nav>
-    <a href="#categorias">Categorías</a>
-    <a href="#destacados">Destacados</a>
-    <a href="#contacto">Contacto</a>
+<a href="#categorias">Categorías</a>
+<a href="#destacados">Destacados</a>
+<a href="#contacto">Contacto</a>
 </nav>
 
 </header>
 
 <section class="hero">
 
-<div class="overlay">
+<div class="hero-content">
 
 <h1>Diseño que transforma tu hogar</h1>
 
@@ -53,66 +218,66 @@ Explorar categorías
 
 <div class="grid-categorias">
 
-<a href="categorias/dormitorio.html" class="categoria">
+<a class="categoria" href="categorias/dormitorio.html">
 
-<img src="images/dormitorio.jpg">
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800">
 
-<div class="texto">
+<div class="categoria-texto">
 <h3>Dormitorio</h3>
 <p>Sábanas, almohadas y confort.</p>
 </div>
 
 </a>
 
-<a href="categorias/cocina.html" class="categoria">
+<a class="categoria" href="categorias/cocina.html">
 
-<img src="images/cocina.jpg">
+<img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800">
 
-<div class="texto">
+<div class="categoria-texto">
 <h3>Cocina</h3>
 <p>Todo para cocinar mejor.</p>
 </div>
 
 </a>
 
-<a href="categorias/banos.html" class="categoria">
+<a class="categoria" href="categorias/banos.html">
 
-<img src="images/banos.jpg">
+<img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=800">
 
-<div class="texto">
+<div class="categoria-texto">
 <h3>Baños</h3>
 <p>Orden y bienestar.</p>
 </div>
 
 </a>
 
-<a href="categorias/jardin.html" class="categoria">
+<a class="categoria" href="categorias/jardin.html">
 
-<img src="images/jardin.jpg">
+<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800">
 
-<div class="texto">
+<div class="categoria-texto">
 <h3>Patios y Jardín</h3>
 <p>Disfrutá tus espacios exteriores.</p>
 </div>
 
 </a>
 
-<a href="categorias/comedor.html" class="categoria">
+<a class="categoria" href="categorias/comedor.html">
 
-<img src="images/comedor.jpg">
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800">
 
-<div class="texto">
+<div class="categoria-texto">
 <h3>Comedor y Living</h3>
 <p>Elegancia para compartir.</p>
 </div>
 
 </a>
 
-<a href="categorias/garage.html" class="categoria">
+<a class="categoria" href="categorias/garage.html">
 
-<img src="images/garage.jpg">
+<img src="https://images.unsplash.com/photo-1581147036324-c1c89f7f5cdb?w=800">
 
-<div class="texto">
+<div class="categoria-texto">
 <h3>Garage</h3>
 <p>Herramientas y organización.</p>
 </div>
@@ -161,7 +326,11 @@ Explorar categorías
 
 <h3>MORANGO</h3>
 
-<p>Productos para el hogar.</p>
+<br>
+
+<p>Productos para el hogar</p>
+
+<br>
 
 <p>ventas@morango.com</p>
 
