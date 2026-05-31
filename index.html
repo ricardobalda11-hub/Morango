@@ -1,71 +1,171 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morango - Productos para el Hogar</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-        header {
-            background-color: #ff6f61;
-            color: white;
-            padding: 1em 0;
-            text-align: center;
-        }
-        nav {
-            background-color: #ffb6b6;
-            display: flex;
-            justify-content: center;
-            padding: 0.5em 0;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-        .product {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 10px;
-            text-align: center;
-        }
-        .product img {
-            max-width: 100%;
-            border-radius: 8px;
-        }
-        .product h3 {
-            margin: 10px 0 5px 0;
-        }
-        .product a {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 12px;
-            background-color: #ff6f61;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Morango | Productos para el Hogar</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
-    <header>
-        <h1>Morango</h1>
-        <p>Productos para el Hogar</p>
-    </header>
+<header>
 
-    <nav>
-        <a href="#dormitorio">Dormitorio</a>
+<div class="logo">
+    MORANGO
+</div>
+
+<nav>
+    <a href="#categorias">Categorías</a>
+    <a href="#destacados">Destacados</a>
+    <a href="#contacto">Contacto</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="overlay">
+
+<h1>Diseño que transforma tu hogar</h1>
+
+<p>
+Descubrí productos seleccionados para cada espacio de tu vida.
+</p>
+
+<a href="#categorias" class="btn">
+Explorar categorías
+</a>
+
+</div>
+
+</section>
+
+<section id="categorias">
+
+<h2>Explorá nuestras categorías</h2>
+
+<div class="grid-categorias">
+
+<a href="categorias/dormitorio.html" class="categoria">
+
+<img src="images/dormitorio.jpg">
+
+<div class="texto">
+<h3>Dormitorio</h3>
+<p>Sábanas, almohadas y confort.</p>
+</div>
+
+</a>
+
+<a href="categorias/cocina.html" class="categoria">
+
+<img src="images/cocina.jpg">
+
+<div class="texto">
+<h3>Cocina</h3>
+<p>Todo para cocinar mejor.</p>
+</div>
+
+</a>
+
+<a href="categorias/banos.html" class="categoria">
+
+<img src="images/banos.jpg">
+
+<div class="texto">
+<h3>Baños</h3>
+<p>Orden y bienestar.</p>
+</div>
+
+</a>
+
+<a href="categorias/jardin.html" class="categoria">
+
+<img src="images/jardin.jpg">
+
+<div class="texto">
+<h3>Patios y Jardín</h3>
+<p>Disfrutá tus espacios exteriores.</p>
+</div>
+
+</a>
+
+<a href="categorias/comedor.html" class="categoria">
+
+<img src="images/comedor.jpg">
+
+<div class="texto">
+<h3>Comedor y Living</h3>
+<p>Elegancia para compartir.</p>
+</div>
+
+</a>
+
+<a href="categorias/garage.html" class="categoria">
+
+<img src="images/garage.jpg">
+
+<div class="texto">
+<h3>Garage</h3>
+<p>Herramientas y organización.</p>
+</div>
+
+</a>
+
+</div>
+
+</section>
+
+<section id="destacados">
+
+<h2>Productos destacados</h2>
+
+<div class="productos">
+
+<div class="producto">
+<img src="https://picsum.photos/400/300?1">
+<h3>Juego de Sábanas Premium</h3>
+<p>$1.990</p>
+</div>
+
+<div class="producto">
+<img src="https://picsum.photos/400/300?2">
+<h3>Set de Ollas</h3>
+<p>$3.490</p>
+</div>
+
+<div class="producto">
+<img src="https://picsum.photos/400/300?3">
+<h3>Toallas de Baño</h3>
+<p>$790</p>
+</div>
+
+<div class="producto">
+<img src="https://picsum.photos/400/300?4">
+<h3>Juego de Jardín</h3>
+<p>$8.990</p>
+</div>
+
+</div>
+
+</section>
+
+<footer id="contacto">
+
+<h3>MORANGO</h3>
+
+<p>Productos para el hogar.</p>
+
+<p>ventas@morango.com</p>
+
+</footer>
+
+</body>
+</html>
