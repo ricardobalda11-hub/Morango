@@ -8,38 +8,41 @@
         * { box-sizing: border-box; }
         body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f9f9f9; color: #1a1a1a; margin: 0; padding: 0; }
         
-        header { background-color: #111; color: #fff; text-align: center; padding: 15px 10px; }
-        header h1 { margin: 0; font-size: 1.8rem; font-weight: 300; letter-spacing: 2px; }
+        header { background-color: #111; color: #fff; text-align: center; padding: 20px 10px; }
+        header h1 { margin: 0; font-size: 2rem; font-weight: 300; letter-spacing: 4px; }
         
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
         
-        .featured { background-color: #eaeaea; text-align: center; padding: 30px 20px; margin-bottom: 25px; border-radius: 4px; }
-        .featured h2 { margin-top: 0; font-size: 1.4rem; color: #222; }
-        .featured p { color: #666; font-size: 0.95rem; margin-bottom: 0; }
+        /* Banner destacado minimalista */
+        .featured { background-color: #eaeaea; text-align: center; padding: 40px 20px; margin-bottom: 30px; border-radius: 4px; }
+        .featured h2 { margin-top: 0; font-size: 1.5rem; color: #111; font-weight: 400; letter-spacing: 1px; }
+        .featured p { color: #666; font-size: 0.95rem; margin-bottom: 0; margin-top: 10px; }
         
-        /* Grid mejorado para móviles y computadoras */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        /* Grid responsivo */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         
         .card { background-color: #fff; border: 1px solid #e0e0e0; border-radius: 6px; overflow: hidden; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
-        .card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.06); }
         
-        .card-info { padding: 15px; text-align: center; }
-        .card-info h3 { margin: 0 0 10px 0; font-size: 1.2rem; font-weight: 500; color: #333; }
+        .card img { width: 100%; height: 220px; object-fit: cover; filter: grayscale(100%); display: block; }
         
-        .card img { width: 100%; height: 200px; object-fit: cover; filter: grayscale(100%); display: block; }
+        .card-info { padding: 15px; text-align: center; background-color: #fff; border-top: 1px solid #f0f0f0; }
+        .card-info h3 { margin: 0; font-size: 1.15rem; font-weight: 400; color: #222; letter-spacing: 0.5px; }
         
-        .menu { display: none; margin: 0; padding: 15px; background-color: #f5f5f5; border-top: 1px solid #eee; font-size: 0.9rem; color: #555; }
+        /* Menú desplegable de productos */
+        .menu { display: none; margin: 0; padding: 20px; background-color: #f6f6f6; border-top: 1px solid #eee; font-size: 0.95rem; color: #444; }
         .menu ul { margin: 0; padding-left: 20px; text-align: left; }
-        .menu li { margin-bottom: 5px; }
+        .menu li { margin-bottom: 8px; }
+        .menu li:last-child { margin-bottom: 0; }
         
         /* Formulario Minimalista */
-        .form-container { background-color: #fff; padding: 25px; margin-top: 40px; border: 1px solid #e0e0e0; border-radius: 6px; }
-        .form-container h3 { margin-top: 0; font-size: 1.3rem; text-align: center; margin-bottom: 20px; }
+        .form-container { background-color: #fff; padding: 30px; margin-top: 50px; border: 1px solid #e0e0e0; border-radius: 6px; }
+        .form-container h3 { margin-top: 0; font-size: 1.4rem; text-align: center; margin-bottom: 25px; font-weight: 400; }
         form { display: flex; flex-direction: column; max-width: 500px; margin: 0 auto; }
-        label { margin-bottom: 6px; font-size: 0.9rem; font-weight: bold; color: #444; }
-        input, textarea { margin-bottom: 18px; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; font-size: 0.95rem; }
-        input:focus, textarea:focus { border-color: #333; outline: none; }
-        button { padding: 12px; background-color: #111; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; transition: background 0.2s; }
+        label { margin-bottom: 6px; font-size: 0.9rem; font-weight: 500; color: #333; }
+        input, textarea { margin-bottom: 20px; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; font-size: 0.95rem; background-color: #fafafa; }
+        input:focus, textarea:focus { border-color: #111; background-color: #fff; outline: none; }
+        button { padding: 14px; background-color: #111; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; font-weight: 500; transition: background 0.2s; letter-spacing: 1px; }
         button:hover { background-color: #333; }
     </style>
 </head>
@@ -57,7 +60,7 @@
 
     <div class="grid">
         <div class="card" onclick="toggleMenu('banos')">
-            <img src="https://images.unsplash.com/photo-1620626011761-996317b6979a?w=500&auto=format&fit=crop&q=60" alt="Baños">
+            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=500&auto=format&fit=crop&q=60" alt="Baños">
             <div class="card-info">
                 <h3>Baños</h3>
             </div>
@@ -164,7 +167,7 @@
         if (menu.style.display === "block") {
             menu.style.display = "none";
         } else {
-            // Cierra otros menús abiertos si se desea (opcional, deja una experiencia limpia)
+            // Cierra de forma limpia otros menús abiertos al hacer clic
             var menus = document.getElementsByClassName('menu');
             for (var i = 0; i < menus.length; i++) {
                 menus[i].style.display = "none";
