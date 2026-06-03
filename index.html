@@ -8,174 +8,82 @@
         * { box-sizing: border-box; }
         body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f9f9f9; color: #1a1a1a; margin: 0; padding: 0; }
         
-        header { background-color: #111; color: #fff; text-align: center; padding: 20px 10px; }
+        header { 
+            background-color: #111; 
+            color: #fff; 
+            padding: 20px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
         header h1 { margin: 0; font-size: 2rem; font-weight: 300; letter-spacing: 4px; }
+        nav a { color: #fff; margin-left: 20px; text-decoration: none; font-size: 0.9rem; }
         
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
         
-        /* Banner destacado minimalista */
-        .featured { background-color: #eaeaea; text-align: center; padding: 40px 20px; margin-bottom: 30px; border-radius: 4px; }
-        .featured h2 { margin-top: 0; font-size: 1.5rem; color: #111; font-weight: 400; letter-spacing: 1px; }
-        .featured p { color: #666; font-size: 0.95rem; margin-bottom: 0; margin-top: 10px; }
+        .featured { 
+            background-image: url('https://images.unsplash.com/photo-1620626011761-996317b6979a?w=1200&auto=format&fit=crop'); 
+            background-size: cover; 
+            background-position: center; 
+            text-align: center; 
+            padding: 100px 20px; 
+            margin-bottom: 30px; 
+            border-radius: 6px; 
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+        .featured h2 { margin-top: 0; font-size: 2.5rem; font-weight: 500; }
         
-        /* Grid responsivo */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        
-        .card { background-color: #fff; border: 1px solid #e0e0e0; border-radius: 6px; overflow: hidden; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
-        .card:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.06); }
-        
+        .card { background-color: #fff; border: 1px solid #e0e0e0; border-radius: 6px; overflow: hidden; cursor: pointer; transition: transform 0.2s; }
+        .card:hover { transform: translateY(-3px); }
         .card img { width: 100%; height: 220px; object-fit: cover; filter: grayscale(100%); display: block; }
+        .card-info { padding: 15px; text-align: center; background-color: #fff; }
         
-        .card-info { padding: 15px; text-align: center; background-color: #fff; border-top: 1px solid #f0f0f0; }
-        .card-info h3 { margin: 0; font-size: 1.15rem; font-weight: 400; color: #222; letter-spacing: 0.5px; }
-        
-        /* Menú desplegable de productos */
         .menu { display: none; margin: 0; padding: 20px; background-color: #f6f6f6; border-top: 1px solid #eee; font-size: 0.95rem; color: #444; }
         .menu ul { margin: 0; padding-left: 20px; text-align: left; }
-        .menu li { margin-bottom: 8px; }
-        .menu li:last-child { margin-bottom: 0; }
         
-        /* Formulario Minimalista */
         .form-container { background-color: #fff; padding: 30px; margin-top: 50px; border: 1px solid #e0e0e0; border-radius: 6px; }
-        .form-container h3 { margin-top: 0; font-size: 1.4rem; text-align: center; margin-bottom: 25px; font-weight: 400; }
         form { display: flex; flex-direction: column; max-width: 500px; margin: 0 auto; }
-        label { margin-bottom: 6px; font-size: 0.9rem; font-weight: 500; color: #333; }
-        input, textarea { margin-bottom: 20px; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; font-size: 0.95rem; background-color: #fafafa; }
-        input:focus, textarea:focus { border-color: #111; background-color: #fff; outline: none; }
-        button { padding: 14px; background-color: #111; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; font-weight: 500; transition: background 0.2s; letter-spacing: 1px; }
-        button:hover { background-color: #333; }
+        input, textarea { margin-bottom: 20px; padding: 12px; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 14px; background-color: #111; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+        
+        .assistant-link { text-align: center; margin-top: 20px; display: block; font-weight: bold; color: #333; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>MORANGO</h1>
+    <nav>
+        <a href="#categorias">Categorías</a>
+        <a href="#lo-nuevo">Lo Nuevo</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
 </header>
 
 <div class="container">
     <div class="featured">
         <h2>Sección Destacada: Lo nuevo en Morango</h2>
-        <p>Descubre nuestra selección especial para esta temporada en MercadoLibre.</p>
     </div>
 
-    <div class="grid">
-        <div class="card" onclick="toggleMenu('banos')">
-            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=500&auto=format&fit=crop&q=60" alt="Baños">
-            <div class="card-info">
-                <h3>Baños</h3>
-            </div>
-            <div id="banos" class="menu">
-                <ul>
-                    <li>Toallas de algodón Premium</li>
-                    <li>Organizadores y repisas</li>
-                    <li>Juegos de accesorios minimalistas</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="card" onclick="toggleMenu('cocina')">
-            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=500&auto=format&fit=crop&q=60" alt="Cocina">
-            <div class="card-info">
-                <h3>Cocina</h3>
-            </div>
-            <div id="cocina" class="menu">
-                <ul>
-                    <li>Organizadores de alacena</li>
-                    <li>Vajilla cerámica mate</li>
-                    <li>Utensilios de acero inoxidable</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="card" onclick="toggleMenu('dormitorio')">
-            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=500&auto=format&fit=crop&q=60" alt="Dormitorio">
-            <div class="card-info">
-                <h3>Dormitorio</h3>
-            </div>
-            <div id="dormitorio" class="menu">
-                <ul>
-                    <li>Juegos de sábanas suaves</li>
-                    <li>Almohadas viscoelásticas</li>
-                    <li>Edredones nórdicos</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="card" onclick="toggleMenu('patio')">
-            <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=500&auto=format&fit=crop&q=60" alt="Patio y Jardín">
-            <div class="card-info">
-                <h3>Patio y Jardín</h3>
-            </div>
-            <div id="patio" class="menu">
-                <ul>
-                    <li>Macetas modernas</li>
-                    <li>Luces solares exteriores</li>
-                    <li>Sillas y decoración de exterior</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="card" onclick="toggleMenu('garajes')">
-            <img src="https://images.unsplash.com/photo-1595246140625-573b715d11dc?w=500&auto=format&fit=crop&q=60" alt="Garajes">
-            <div class="card-info">
-                <h3>Garajes</h3>
-            </div>
-            <div id="garajes" class="menu">
-                <ul>
-                    <li>Estanterías metálicas de alta carga</li>
-                    <li>Cajas organizadoras</li>
-                    <li>Ganchos de pared</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="card" onclick="toggleMenu('otros')">
-            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=500&auto=format&fit=crop&q=60" alt="Otros">
-            <div class="card-info">
-                <h3>Otros</h3>
-            </div>
-            <div id="otros" class="menu">
-                <ul>
-                    <li>Lámparas de diseño</li>
-                    <li>Espejos decorativos</li>
-                    <li>Organizadores multiuso</li>
-                </ul>
-            </div>
-        </div>
+    <div class="grid" id="categorias">
+        <!-- Tarjetas de categorías aquí -->
     </div>
 
-    <div class="form-container">
+    <div class="form-container" id="contacto">
         <h3>Contacto y Registro de Clientes</h3>
         <form action="#" method="POST">
             <label for="name">Nombre Completo</label>
-            <input type="text" id="name" name="name" placeholder="Tu nombre" required>
-
+            <input type="text" id="name" name="name" required>
             <label for="email">Correo Electrónico</label>
-            <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
-
-            <label for="message">¿Qué producto estás buscando?</label>
-            <textarea id="message" name="message" rows="4" placeholder="Escribe aquí tus dudas o el artículo de tu interés..."></textarea>
-
+            <input type="email" id="email" name="email" required>
             <button type="submit">Enviar Información</button>
         </form>
     </div>
+    
+    <a href="#" class="assistant-link">Hablar con nuestro Asistente Virtual</a>
 </div>
-
-<script>
-    function toggleMenu(id) {
-        var menu = document.getElementById(id);
-        if (menu.style.display === "block") {
-            menu.style.display = "none";
-        } else {
-            // Cierra de forma limpia otros menús abiertos al hacer clic
-            var menus = document.getElementsByClassName('menu');
-            for (var i = 0; i < menus.length; i++) {
-                menus[i].style.display = "none";
-            }
-            menu.style.display = "block";
-        }
-    }
-</script>
 
 </body>
 </html>
